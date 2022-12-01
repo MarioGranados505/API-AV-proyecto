@@ -13,7 +13,11 @@ app.use(express.urlencoded({extended:false}));
 app.use(URL,require('../Routers/GetBD'));
 app.use(URL,require('../Routers/PostBD'));
 
-app.use(Cors());
+const WhiteList=['https://ramonpachecoestrella.000webhostapp.com']
+
+app.use(Cors({
+    origin:WhiteList
+}));
 /*
 app.use((req,res)=>{
     res.header("Access-Control-Allow-Origin","*");
