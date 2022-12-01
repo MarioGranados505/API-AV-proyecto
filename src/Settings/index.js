@@ -20,5 +20,13 @@ app.use((req,res)=>{
     res.header("Access-Control-Allow-Headers","Origin, X-Requested-with, Content-Type, Accept");
     next();
 })*/
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "POST,GET,OPTIONS");
+    if (req.method == "OPTIONS") {
+      return res.sendStatus(200);
+    }
+    next();
+  });
 
 module.exports=app;
