@@ -165,6 +165,24 @@ function POSTChat(req,res){
         }
    })
 }
+function POSTUnion(req,res){
+    const {
+        ID_usuario,
+        ID_materia
+    }=req.body;
+
+    console.log("entre");
+    let query=`INSERT INTO tb_unido VALUES ('${Math.round(Math.random()*(100000-0))+0}','${ID_materia}','${ID_usuario}');`;
+   
+    Conecction.query(query,(err,row,fields)=>{
+        if(!err){
+            return res.json(req.body)
+        }else{
+            
+            return res.json({"Message":err})
+        }
+   })
+}
 
 module.exports={
     POSTUsuario,
@@ -176,4 +194,6 @@ module.exports={
     POSTSala,
     POSTNotificacion,
     POSTChat,
+    POSTUnion,
+
 }

@@ -8,7 +8,8 @@ const {
     POSTTarea,
     POSTSala,
     POSTNotificacion,
-    POSTChat
+    POSTChat,
+    POSTUnion
  }=require('../Controllers/POST.Contrillers')
 
 const multer=require('multer')
@@ -41,5 +42,6 @@ router.post('/POST/tarea',POSTTarea);
 router.post('/POST/sala',POSTSala);
 router.post('/POST/notificacion',POSTNotificacion);
 router.post('/POST/chat',POSTChat)
+router.post('/POST/union',POSTUnion)
 
 module.exports=router;
