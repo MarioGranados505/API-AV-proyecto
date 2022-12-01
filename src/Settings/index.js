@@ -1,7 +1,7 @@
 const express=require('express');
 const { URL }=require('../Settings/envconf')
-//const Cors=require('cors')
-import Cors from 'cors';
+const Cors=require('cors')
+//import Cors from 'cors';
 
 const app=express();
 
